@@ -6,11 +6,10 @@ const User = require('../models/userSchema');
 
 //User signin route
 module.exports = router.post('/signin', async(req, res)=>{
-    
     try {
         let token;
         const { email , password } = req.body;
-
+        console.log(email, ' ', password);
         if(!email || !password){
             return res.status(400).json({error: "invalid crededntials"})
         }
@@ -18,6 +17,7 @@ module.exports = router.post('/signin', async(req, res)=>{
         const userSignin = await User.findOne({ email: email });
 
         if (userSignin){
+                console.log(userSignin)
                 const isSame = await bcrypt.compare(password, userSignin.password); 
 
                 token = await userSignin.generateAuthToken();
@@ -28,7 +28,7 @@ module.exports = router.post('/signin', async(req, res)=>{
                 })
 
                 if(!isSame){
-                    res.status(400).json({error: "invalid crededntials"})    
+                    res.status(400).json({error: "invalid credentials"})    
                 }else{
                     res.json({message: "user signin successfully"})
                 }

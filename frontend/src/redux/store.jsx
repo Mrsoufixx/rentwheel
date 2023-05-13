@@ -1,23 +1,14 @@
-import { createStore, applyMiddleware,combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from "redux-thunk"
-import {carsReducer} from "./reducers/carsReducer"
-import {alertReducer} from "./reducers/alertReducer"
-import { userLoginReducer, userRegistreReducer } from './reducers/userReducer';
-const composeEnhancers = composeWithDevTools({
-  
-});
+import { createStore, combineReducers } from 'redux';
+import userReducer from './reducers/userReducer';
+import adminReducer from './reducers/adminReducer';
+
+// Combine the reducers
 const rootReducer = combineReducers({
-      carsReducer,
-      alertReducer,
-      userRegistreReducer,
-      userLoginReducer
-})
-const store = createStore(
-  rootReducer,
-  composeEnhancers(
-    applyMiddleware(thunk)
-    
-  )
-);
-export default store
+  user: userReducer,
+  admin: adminReducer,
+});
+
+// Create the Redux store
+const store = createStore(rootReducer);
+
+export default store;

@@ -7,6 +7,17 @@ const initialState = {
 
     };
     
+    
+    const userReducer = (state = initialState, action) => {
+      switch (action.type) {
+        // Handle different action types here
+        default:
+          return state;
+      }
+    };
+    
+    export default userReducer;
+    
     function userLoginReducer(state = initialState, action) {
       switch (action.type) {
         case "LOADING":

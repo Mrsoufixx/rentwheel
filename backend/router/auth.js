@@ -19,6 +19,7 @@ router.get('/', (req, res) =>{
 //     console.log("hello hi s is register function !!")
 // })
 
+router.use(require('../clientSideModules/signup'))
 router.use(require('../clientSideModules/signin'))
 router.use(require('../clientSideModules/signout'))
 router.use(require('../clientSideModules/getdata'))

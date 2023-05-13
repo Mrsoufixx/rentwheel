@@ -9,7 +9,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 require('./database/conn'); 
-
+app.use(cors({
+    origin: "*"
+  }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -17,7 +19,7 @@ app.use(require('./router/auth'));
 //app.use("/uploads",express.static('uploads'));
 
 
-const PORT = process.env.PORT || 5173;
+const PORT = process.env.PORT || 5000;
 
 
 app.listen(PORT, ()=>{
