@@ -11,7 +11,3 @@ and this will install all the packages for frontend. Now in the server you need 
 and then you need to install some more modules like: "npm install dotenv" ,  "npm install stipe" , "npm install bcryptjs" , "npm install alert" ,
  "npm install cookie-parser" ,  "npm install cors" ,  "npm install jsonwebtoken" , "npm install multer" , "npm install uuid" . 
 and then after successfully installing these modules you can run the server by "nodemon server.js" command. 
-
-***to access the admin panel :
-********User Name: Bike Book
-********Password : 1234
