@@ -1,0 +1,21 @@
+{
+  "name": "rentwheels",
+  "version": "1.0.0",
+  "description": "<p align=\"center\" width=\"100%\"> <img src=\"Logo/BikeBook-logo color.png\" alt=\"Logo\" width=\"200\"/> </p>",
+  "main": "index.js",
+  "scripts": {
+    "frontend-install": "npm install --prefix frontend",
+    "backend-install": "npm install --prefix backend",
+    "backend": "nodemon backend/server.js",
+    "frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "start": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}

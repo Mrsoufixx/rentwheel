@@ -1,4 +1,4 @@
-<p align="center" width="100%">
+<!-- <p align="center" width="100%">
 <img src="Logo/BikeBook-logo color.png" alt="Logo" width="200"/>
 </p>
 
@@ -125,4 +125,4 @@ We will be using basic CSS and its framework Bootstrap 4, which provides various
 <img src="Screenshots/screencapture-localhost-3000-rentbikesreports-2022-12-31-22_34_29.png">
 
 ## Available Users
-<img src="Screenshots/screencapture-localhost-3000-availableusers-2022-12-31-22_34_39.png">
+<img src="Screenshots/screencapture-localhost-3000-availableusers-2022-12-31-22_34_39.png"> -->

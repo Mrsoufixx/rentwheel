@@ -1,109 +1,65 @@
-import React from 'react'
+import React from 'react';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaPinterest,
+} from 'react-icons/fa';
+
+const footerData = {
+  branches: [
+    { name: 'Mirpur', icon: FaMapMarkerAlt },
+    { name: 'Farmgate', icon: FaMapMarkerAlt },
+    { name: 'Badda', icon: FaMapMarkerAlt },
+    { name: 'Aftabnagar', icon: FaMapMarkerAlt },
+    { name: 'Uttara', icon: FaMapMarkerAlt },
+  ],
+  quickLinks: [
+    { label: 'home', icon: AiOutlineArrowRight },
+    { label: 'vehicles', icon: AiOutlineArrowRight },
+    { label: 'services', icon: AiOutlineArrowRight },
+    { label: 'featured', icon: AiOutlineArrowRight },
+    { label: 'reviews', icon: AiOutlineArrowRight },
+    { label: 'contact', icon: AiOutlineArrowRight },
+  ],
+  contactInfo: [
+    { icon: FaPhone, value: '+123-456-7890' },
+    { icon: FaPhone, value: '+111-222-3333' },
+    { icon: FaEnvelope, value: 'bikebook@gmail.com' },
+    { icon: FaMapMarkerAlt, value: 'Aftabnagar, Badda, Dhaka' },
+  ],
+  socialLinks: [
+    { icon: FaFacebookF, label: 'facebook' },
+    { icon: FaTwitter, label: 'twitter' },
+    { icon: FaInstagram, label: 'instagram' },
+    { icon: FaLinkedin, label: 'linkedin' },
+    { icon: FaPinterest, label: 'pinterest' },
+  ],
+};
 
 function Footer() {
   return (
     <section className="footer" id="footer">
-        <div className="box-container">
-          <div className="box">
-            <h3>our branches</h3>
-            <a href="#">
-              {" "}
-              <i className="fas fa-map-marker-alt"></i> Mirpur{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-map-marker-alt"></i> Farmgate{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-map-marker-alt"></i> Badda{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-map-marker-alt"></i> Aftabnagar{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-map-marker-alt"></i> Uttara{" "}
-            </a>
+      <div className="box-container">
+        {Object.entries(footerData).map(([sectionName, sectionItems], index) => (
+          <div className="box" key={index}>
+            <h3>{sectionName}</h3>
+            {sectionItems.map((item, itemIndex) => (
+              <a href="#" key={itemIndex}>
+                {React.createElement(item.icon)}
+                {item.value || item.label}
+              </a>
+            ))}
           </div>
+        ))}
+      </div>
 
-          <div className="box">
-            <h3>quick links</h3>
-            <a href="#">
-              {" "}
-              <i className="fas fa-arrow-right"></i> home{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-arrow-right"></i> vehicles{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-arrow-right"></i> services{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-arrow-right"></i> featured{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-arrow-right"></i> reviews{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-arrow-right"></i> contact{" "}
-            </a>
-          </div>
-
-          <div className="box">
-            <h3>contact info</h3>
-            <a href="#">
-              {" "}
-              <i className="fas fa-phone"></i> +123-456-7890{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-phone"></i> +111-222-3333{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-envelope"></i> bikebook@gmail.com{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fas fa-map-marker-alt"></i> Aftabnagar, Badda, Dhaka{" "}
-            </a>
-          </div>
-
-          <div className="box">
-            <h3>contact info</h3>
-            <a href="#">
-              {" "}
-              <i className="fab fa-facebook-f"></i> facebook{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fab fa-twitter"></i> twitter{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fab fa-instagram"></i> instagram{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fab fa-linkedin"></i> linkedin{" "}
-            </a>
-            <a href="#">
-              {" "}
-              <i className="fab fa-pinterest"></i> pinterest{" "}
-            </a>
-          </div>
-        </div>
-
-        <div className="credit"> Made with ❤️ | All rights reserved </div>
-      </section>
-  )
+      <div className="credit"> Made with ❤️ | All rights reserved </div>
+    </section>
+  );
 }
 
-export default Footer
+export default Footer;
