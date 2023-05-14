@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { home } from "../../assets"
 
 function Banner() {
   return (
@@ -10,7 +12,7 @@ function Banner() {
       <img
         data-speed="5"
         className="home-parallax"
-        src="../../assets/"
+        // src={home}
         alt=""
       />
 

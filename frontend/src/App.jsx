@@ -22,6 +22,7 @@ import ExploreRentBike from "./components/ExploreRentBike";
 import {initialState, reducer} from "./reducer/UseReducer"
 import {adminInitialState, adminreducer} from "./reducer/UseReducerAdmin"
 import Navbar from "./layouts/Navbar";
+import Footer from "./layouts/Footer";
 
 export const UserContext = createContext();
 export const AdminContext = createContext();
@@ -60,6 +61,7 @@ const App = () => {
           <Route path="/getrentbikesforadmin" element={<Getrentbikes />} />
         </Routes>
       </AdminContext.Provider>
+      <Footer/>
     </>
   );
 }
